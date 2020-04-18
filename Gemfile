@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'devise-bootstrap-views'
+gem "font-awesome-rails"
 gem 'awesome_print'
 
 # Use Active Storage variant

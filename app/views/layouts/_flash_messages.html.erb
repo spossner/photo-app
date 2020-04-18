@@ -1,0 +1,8 @@
+<% if notice || alert %>
+  <div class="col-12 alert alert-<%= notice ? "success" : "danger" %> alert-dismissible fade show" role="alert">
+    <%= notice ? notice : alert %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>

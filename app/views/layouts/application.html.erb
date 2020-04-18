@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navigation' %>
+    <div class="container mt-4">
+      <div class="row">
+        <%= render 'layouts/flash_messages' %>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
