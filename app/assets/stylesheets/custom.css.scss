@@ -1,2 +1,12 @@
 @import 'bootstrap/dist/css/bootstrap';
 @import "font-awesome";
+
+.jumbotron.main-teaser {
+  text-align: center;
+  background-image: asset_url('main-teaser-80.jpg');
+  background-size: cover;
+  color: #111;
+  font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  font-stretch: expanded;
+  /* text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555; */
+}

@@ -1,1 +1,45 @@
-<h1>Photo App</h1>
+<% if current_user %>
+  <h3>Welcome <%= current_user.full_name %></h3>
+<% else %>
+  <div class="row">
+    <div class="jumbotron main-teaser col-12">
+      <div class="container">
+        <h2 class="display-4">Welcome to Photo Management App</h2>
+        <p class="lead">Manage all your photos from within on app. Sign up now!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card-deck col-12 mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Standard</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">10 EUR</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>2 GB of storage</li>
+            <li>Website access</li>
+            <li>Email support</li>
+          </ul>
+          <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-lg btn-block btn-outline-primary" %>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Pro</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">30 EUR</h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Unlimited photo upload</li>
+            <li>Access anywhere</li>
+            <li>Priority email support</li>
+          </ul>
+          <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-lg btn-block btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
