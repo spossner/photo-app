@@ -21,9 +21,18 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <div id="card-element" class="col"></div>
+  </div>
+  <div class="row">
+    <div class="sr-field-error col-12 alert-danger" id="card-errors" role="alert"></div>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "devise/shared/links" %>

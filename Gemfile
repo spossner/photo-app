@@ -25,6 +25,8 @@ gem 'devise-bootstrap-views'
 gem "font-awesome-rails"
 gem 'awesome_print'
 
+gem 'stripe'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
