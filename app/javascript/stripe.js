@@ -1,5 +1,5 @@
 // see https://github.com/stripe-samples/accept-a-card-payment
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
     // Disable the button until we have Stripe set up on the page
     // document.querySelector("input[type='submit']").disabled = true;
 
