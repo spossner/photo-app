@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get 'stripe-key', to: "payment#stripe_key"
   post 'pay', to: "payment#pay"
+
+  resources :images
 end
