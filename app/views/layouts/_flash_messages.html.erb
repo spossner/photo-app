@@ -5,4 +5,17 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+<% else %>
+  <div class="row flash-messages">
+    <div class="col-sm-12">
+      <% flash.each do |name, msg| %>
+        <div class='alert alert-<%= "#{name}" %>'>
+          <%= msg %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
 <% end %>

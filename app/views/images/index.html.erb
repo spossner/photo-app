@@ -1,12 +1,37 @@
-<h1>Images#list</h1>
-<p>Find me in app/views/images/list.html.erb</p>
+<h1>Image portfolio</h1>
 
-<ul>
-<% current_user.images.each do |image| %>
-  <li>
-    <%= link_to image_path(image) do %>
-      <%= image_tag image.variant(resize_to_limit: [200, 200]) %>
-    <% end %>
-  </li>
-<% end %>
-</ul>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Preview</th>
+      <th scope="col">Filename</th>
+      <th scope="col">Size</th>
+      <th scope="col">Date</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @images.each do |image| %>
+    <tr>
+      <th scope="row">1<%= image.id %></th>
+      <td>
+        <%= link_to image_path(image) do %>
+          <%= image_tag image.variant(resize_to_limit: [150, 150]) %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to image_path(image) do %>
+          <%= truncate(image.blob.filename.to_s, length: 20) %>
+        <% end %>
+      </td>
+      <td><%= number_to_human_size(image.blob.byte_size) %></td>
+      <td><%= image.blob.created_at.strftime("%d.%m.%Y") %></td>
+      <td>
+        <%= link_to "Edit", edit_image_path(image), class: "btn btn-sm btn-success" %>
+        <%= link_to "Delete", image_path(image), method: :delete, class: "btn btn-sm btn-danger", data: { confirm: "Are you sure?" } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
