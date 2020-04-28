@@ -1,0 +1,12 @@
+<h1>Images#list</h1>
+<p>Find me in app/views/images/list.html.erb</p>
+
+<ul>
+<% current_user.images.each do |image| %>
+  <li>
+    <%= link_to image_path(image) do %>
+      <%= image_tag image.variant(resize_to_limit: [200, 200]) %>
+    <% end %>
+  </li>
+<% end %>
+</ul>
